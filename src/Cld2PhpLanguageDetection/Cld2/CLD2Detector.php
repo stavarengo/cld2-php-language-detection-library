@@ -15,6 +15,6 @@ namespace Sta\Cld2PhpLanguageDetection\Cld2;
  * @method setEncodingHint(string)
  * @method detect(string)
  */
-class CLD2Detector
+class CLD2Detector extends \CLD2Detector
 {
 }

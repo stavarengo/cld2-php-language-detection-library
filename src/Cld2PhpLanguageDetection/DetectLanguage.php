@@ -53,7 +53,6 @@ class DetectLanguage
         }
 
         $result = [];
-        $text   = $this->text;
 
         if ($normalize) {
             $text = $this->normalizeText($text);
@@ -61,15 +60,11 @@ class DetectLanguage
 
         $cld2Result = $this->cld2Detector->detect($text);
         if ($cld2Result && is_array($cld2Result)) {
-            $result = array_map(
-                function (array $cld2ResultItem) {
-                    return (new DetectionResult())->setLanguageCode($cld2ResultItem['language_code'])
-                                                  ->setLanguageName($cld2ResultItem['language_name'])
-                                                  ->setConfidence($cld2ResultItem['is_reliable'])
-                                                  ->setProbability($cld2ResultItem['language_probability'] / 100);
-                },
-                $cld2Result
-            );
+            $result[] = (new DetectionResult())->setLanguageCode($cld2Result['language_code'])
+                                               ->setLanguageName($cld2Result['language_name'])
+                                               ->setConfidence($cld2Result['is_reliable'])
+                                               ->setProbability($cld2Result['language_probability'] / 100);
+
         }
 
         return $result;
