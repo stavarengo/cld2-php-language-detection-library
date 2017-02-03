@@ -1,0 +1,18 @@
+{
+    "name": "stavarengo/cld2-php-language-detection-library",
+    "description": "PHP library for language detection build on top of CLD2.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stavarengo",
+            "email": "faelsta@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sta\\Cld2PhpLanguageDetection\\": "src/Cld2PhpLanguageDetection/"
+        }
+    },
+    "require": {}
+}
