@@ -19,9 +19,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
  
 # Compile the PHP CLD2 extension
 RUN cd /root && \
-    git clone https://github.com/fntlnz/cld2-php-ext.git && \
+    git clone https://github.com/fntlnz/cld2-php-ext.git --progress && \
     cd cld2-php-ext && \
-    git clone https://github.com/CLD2Owners/cld2.git libcld2 && \
+    git clone https://github.com/CLD2Owners/cld2.git libcld2 --progress && \
     cd libcld2/internal && \
     ./compile_libs.sh && \
     cp libcld2.so /usr/local/lib && \
