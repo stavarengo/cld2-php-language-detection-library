@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$text = $argc ? $argv[0] : 'Bonjour le monde.';
+$text = $argc > 1 ? $argv[1] : 'Bonjour le monde.';
 
 $detectLanguage   = new \Sta\Cld2PhpLanguageDetection\DetectLanguage();
 $detectionResults = $detectLanguage->detect($text);
